@@ -4,6 +4,7 @@ import MissionSection from '../components/MissionSection.vue'
 import FeaturedVehiclesSection from '../components/FeaturedVehiclesSection.vue'
 import BlogNewsSection from '../components/BlogNewsSection.vue'
 import OffersSection from '../components/OffersSection.vue'
+import AppSection from '../components/AppSection.vue'
 </script>
 
 <template>
@@ -12,4 +13,5 @@ import OffersSection from '../components/OffersSection.vue'
   <FeaturedVehiclesSection />
   <BlogNewsSection />
   <OffersSection />
+  <AppSection />
 </template>
