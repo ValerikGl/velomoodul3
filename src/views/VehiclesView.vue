@@ -10,7 +10,7 @@ import { RouterLink } from "vue-router";
 
 const selectedType = ref("all");
 const selectedPrice = ref("all");
-const selectedRange = ref(100);
+const selectedRange = ref(0);
 const selectedSort = ref("popular");
 
 const isFiltersOpen = ref(false);
@@ -113,7 +113,7 @@ const vehicles = [
 const resetFilters = () => {
   selectedType.value = "all";
   selectedPrice.value = "all";
-  selectedRange.value = 100;
+  selectedRange.value = 0;
   selectedSort.value = "popular";
 };
 
@@ -130,7 +130,7 @@ const filteredVehicles = computed(() => {
 
   if (selectedPrice.value === "3to5") {
     result = result.filter(
-      (vehicle) => vehicle.price >= 3 && vehicle.price <= 5
+      (vehicle) => vehicle.price >= 3 && vehicle.price <= 5,
     );
   }
 
@@ -139,7 +139,7 @@ const filteredVehicles = computed(() => {
   }
 
   result = result.filter(
-    (vehicle) => vehicle.rangeValue <= Number(selectedRange.value)
+    (vehicle) => vehicle.rangeValue >= Number(selectedRange.value),
   );
 
   if (selectedSort.value === "popular") {
@@ -167,7 +167,8 @@ const filteredVehicles = computed(() => {
     <div
       class="mx-auto grid max-w-[1280px] items-start gap-8 lg:grid-cols-[280px_1fr]"
     >
-      <aside v-reveal
+      <aside
+        v-reveal
         class="h-fit rounded-3xl bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.12)] lg:sticky lg:top-28 lg:p-7"
       >
         <div class="flex items-center justify-between">
@@ -177,9 +178,7 @@ const filteredVehicles = computed(() => {
           >
             <SlidersHorizontal class="text-[#6D28D9]" :size="22" />
 
-            <h2 class="font-extrabold text-[#0F172A]">
-              Filtreeri
-            </h2>
+            <h2 class="font-extrabold text-[#0F172A]">Filtreeri</h2>
 
             <svg
               class="h-4 w-4 text-[#6D28D9] transition lg:hidden"
@@ -206,10 +205,7 @@ const filteredVehicles = computed(() => {
         </div>
 
         <Transition name="filters">
-          <div
-            v-show="!isMobile || isFiltersOpen"
-            class="mt-6 lg:mt-8"
-          >
+          <div v-show="!isMobile || isFiltersOpen" class="mt-6 lg:mt-8">
             <div>
               <h3 class="mb-4 font-extrabold text-[#0F172A]">Tüüp</h3>
 
