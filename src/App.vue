@@ -1,7 +1,16 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <div class="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
+    <AppHeader />
+
+    <main>
+      <RouterView />
+    </main>
+
+    <AppFooter />
+  </div>
 </template>

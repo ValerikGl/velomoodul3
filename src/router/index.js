@@ -1,0 +1,20 @@
+import { createRouter, createWebHistory } from 'vue-router'
+
+import HomeView from '../views/HomeView.vue'
+import VehiclesView from '../views/VehiclesView.vue'
+import VehicleDetailView from '../views/VehicleDetailView.vue'
+import ContactView from '../views/ContactView.vue'
+import BookingView from '../views/BookingView.vue'
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', component: HomeView },
+    { path: '/vehicles', component: VehiclesView },
+    { path: '/vehicles/:id', component: VehicleDetailView },
+    { path: '/contact', component: ContactView },
+    { path: '/booking', component: BookingView },
+  ],
+})
+
+export default router
