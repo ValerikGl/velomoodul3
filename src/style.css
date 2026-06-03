@@ -50,3 +50,14 @@ h6 {
   --color-border: #E2E8F0;
   --color-muted: #64748B;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html,
+body,
+#app {
+  overflow-x: hidden;
+}
