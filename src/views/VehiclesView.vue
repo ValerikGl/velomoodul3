@@ -31,6 +31,7 @@ onUnmounted(() => {
 
 const vehicles = [
   {
+    slug: "velo-lite",
     tag: "POPULAARNE",
     type: "scooter",
     price: 2,
@@ -44,6 +45,7 @@ const vehicles = [
     img: "/vehicle-1.png",
   },
   {
+    slug: "velo-ride",
     tag: "UUS",
     type: "moped",
     price: 6,
@@ -57,6 +59,7 @@ const vehicles = [
     img: "/vehicle-2.png",
   },
   {
+    slug: "velo-urban",
     tag: "PREEMIUM",
     type: "bike",
     price: 4,
@@ -70,6 +73,7 @@ const vehicles = [
     img: "/vehicle-3.png",
   },
   {
+    slug: "velo-pro",
     tag: "PRO",
     type: "scooter",
     price: 3,
@@ -83,6 +87,7 @@ const vehicles = [
     img: "/vehicle-1.png",
   },
   {
+    slug: "velo-cruise",
     tag: "COMFORT",
     type: "moped",
     price: 5,
@@ -96,6 +101,7 @@ const vehicles = [
     img: "/vehicle-2.png",
   },
   {
+    slug: "velo-city",
     tag: "ECO",
     type: "bike",
     price: 2,
@@ -160,6 +166,48 @@ const filteredVehicles = computed(() => {
 
   return result;
 });
+
+const vehicleCounts = computed(() => {
+  let result = [...vehicles];
+
+  if (selectedPrice.value === "under3") {
+    result = result.filter((v) => v.price < 3);
+  }
+
+  if (selectedPrice.value === "3to5") {
+    result = result.filter((v) => v.price >= 3 && v.price <= 5);
+  }
+
+  if (selectedPrice.value === "over5") {
+    result = result.filter((v) => v.price > 5);
+  }
+
+  result = result.filter((v) => v.rangeValue >= Number(selectedRange.value));
+
+  return {
+    all: result.length,
+    scooter: result.filter((v) => v.type === "scooter").length,
+    bike: result.filter((v) => v.type === "bike").length,
+    moped: result.filter((v) => v.type === "moped").length,
+  };
+});
+
+const priceCounts = computed(() => {
+  let result = [...vehicles];
+
+  if (selectedType.value !== "all") {
+    result = result.filter((v) => v.type === selectedType.value);
+  }
+
+  result = result.filter((v) => v.rangeValue >= Number(selectedRange.value));
+
+  return {
+    all: result.length,
+    under3: result.filter((v) => v.price < 3).length,
+    between: result.filter((v) => v.price >= 3 && v.price <= 5).length,
+    over5: result.filter((v) => v.price > 5).length,
+  };
+});
 </script>
 
 <template>
@@ -177,7 +225,6 @@ const filteredVehicles = computed(() => {
             @click="isFiltersOpen = !isFiltersOpen"
           >
             <SlidersHorizontal class="text-[#6D28D9]" :size="22" />
-
             <h2 class="font-extrabold text-[#0F172A]">Filtreeri</h2>
 
             <svg
@@ -213,25 +260,25 @@ const filteredVehicles = computed(() => {
                 <label class="filter-option">
                   <input v-model="selectedType" type="radio" value="all" />
                   <span>Kõik</span>
-                  <strong>6</strong>
+                  <strong>{{ vehicleCounts.all }}</strong>
                 </label>
 
                 <label class="filter-option">
                   <input v-model="selectedType" type="radio" value="scooter" />
                   <span>Elektritõukeratas</span>
-                  <strong>2</strong>
+                  <strong>{{ vehicleCounts.scooter }}</strong>
                 </label>
 
                 <label class="filter-option">
                   <input v-model="selectedType" type="radio" value="bike" />
                   <span>Elektrijalgratas</span>
-                  <strong>2</strong>
+                  <strong>{{ vehicleCounts.bike }}</strong>
                 </label>
 
                 <label class="filter-option">
                   <input v-model="selectedType" type="radio" value="moped" />
                   <span>Elektrimopeed</span>
-                  <strong>2</strong>
+                  <strong>{{ vehicleCounts.moped }}</strong>
                 </label>
               </div>
             </div>
@@ -245,25 +292,25 @@ const filteredVehicles = computed(() => {
                 <label class="filter-option">
                   <input v-model="selectedPrice" type="radio" value="all" />
                   <span>Kõik</span>
-                  <strong>6</strong>
+                  <strong>{{ priceCounts.all }}</strong>
                 </label>
 
                 <label class="filter-option">
                   <input v-model="selectedPrice" type="radio" value="under3" />
                   <span>Kuni 3€/h</span>
-                  <strong>2</strong>
+                  <strong>{{ priceCounts.under3 }}</strong>
                 </label>
 
                 <label class="filter-option">
                   <input v-model="selectedPrice" type="radio" value="3to5" />
                   <span>3-5€/h</span>
-                  <strong>3</strong>
+                  <strong>{{ priceCounts.between }}</strong>
                 </label>
 
                 <label class="filter-option">
                   <input v-model="selectedPrice" type="radio" value="over5" />
                   <span>5+ €/h</span>
-                  <strong>1</strong>
+                  <strong>{{ priceCounts.over5 }}</strong>
                 </label>
               </div>
             </div>
@@ -343,7 +390,7 @@ const filteredVehicles = computed(() => {
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <article
             v-for="vehicle in filteredVehicles"
-            :key="vehicle.name"
+            :key="vehicle.slug"
             class="rounded-[24px] bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-2"
           >
             <span
@@ -381,7 +428,7 @@ const filteredVehicles = computed(() => {
             </div>
 
             <RouterLink
-              to="/vehicles"
+              :to="`/vehicles/${vehicle.slug}`"
               class="mt-7 flex items-center justify-center gap-3 rounded-xl border border-[#6D28D9] bg-[#F3E8FF] px-5 py-3 font-bold text-[#6D28D9] transition hover:bg-[#EDE4FF]"
             >
               Vaata lähemalt
