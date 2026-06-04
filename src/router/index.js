@@ -13,7 +13,10 @@ const router = createRouter({
         { path: '/vehicles', component: VehiclesView },
         { path: '/vehicles/:id', component: VehicleDetailView },
         { path: '/contact', component: ContactView },
-        { path: '/booking', component: BookingView },
+        {
+            path: '/booking/:slug',
+            component: BookingView,
+        },
         {
             path: '/vehicles/:id',
             component: VehicleDetailView,

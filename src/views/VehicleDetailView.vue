@@ -31,21 +31,21 @@ onMounted(async () => {
   }).addTo(map);
 
   const veloIcon = L.divIcon({
-  className: "velo-map-marker",
-  html: `
+    className: "velo-map-marker",
+    html: `
     <div class="velo-marker">
       <div class="velo-marker-dot"></div>
     </div>
   `,
-  iconSize: [46, 46],
-  iconAnchor: [23, 46],
-  popupAnchor: [0, -42],
-})
+    iconSize: [46, 46],
+    iconAnchor: [23, 46],
+    popupAnchor: [0, -42],
+  });
 
-L.marker([59.437, 24.7536], { icon: veloIcon })
-  .addTo(map)
-  .bindPopup("Tallinna Velo punkt<br>Narva mnt 5")
-  .openPopup()
+  L.marker([59.437, 24.7536], { icon: veloIcon })
+    .addTo(map)
+    .bindPopup("Tallinna Velo punkt<br>Narva mnt 5")
+    .openPopup();
 });
 
 onUnmounted(() => {
@@ -357,7 +357,7 @@ const benefits = computed(() => [
 
           <div class="mt-6 flex items-center gap-4">
             <RouterLink
-              to="/booking"
+              :to="`/booking/${vehicle.slug}`"
               class="inline-flex items-center gap-3 rounded-xl bg-[#6D28D9] px-7 py-4 font-bold text-white shadow-lg transition hover:scale-105 hover:bg-[#5B21B6] active:scale-95"
             >
               <Calendar :size="20" />
