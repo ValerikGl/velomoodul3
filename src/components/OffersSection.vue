@@ -18,12 +18,9 @@ const nextOffer = () => {
 
 const prevOffer = () => {
   currentOffer.value =
-    currentOffer.value === 0
-      ? offers.length - 1
-      : currentOffer.value - 1
+    currentOffer.value === 0 ? offers.length - 1 : currentOffer.value - 1
 }
 
-// Swipe support
 const touchStartX = ref(0)
 const touchEndX = ref(0)
 
@@ -35,14 +32,9 @@ const handleTouchEnd = (event) => {
   touchEndX.value = event.changedTouches[0].screenX
 
   const diff = touchStartX.value - touchEndX.value
-
   if (Math.abs(diff) < 50) return
 
-  if (diff > 0) {
-    nextOffer()
-  } else {
-    prevOffer()
-  }
+  diff > 0 ? nextOffer() : prevOffer()
 }
 </script>
 
@@ -51,32 +43,32 @@ const handleTouchEnd = (event) => {
     <div class="mx-auto max-w-[1280px] px-5 sm:px-6">
       <div class="flex items-start justify-between gap-6">
         <div>
-          <h2
-            class="text-[38px] font-extrabold text-[#0F172A] sm:text-[56px]"
-          >
+          <h2 class="text-[38px] font-extrabold text-[#0F172A] sm:text-[56px]">
             Pakkumised
           </h2>
 
-          <p
-            class="mt-4 text-[18px] font-semibold text-[#0F172A] sm:text-[22px]"
-          >
+          <p class="mt-4 text-[18px] font-semibold text-[#0F172A] sm:text-[22px]">
             Säästa rohkem meie parimate kampaaniate ja eripakkumistega.
           </p>
         </div>
 
         <div class="hidden gap-4 lg:flex">
           <button
-            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#6D28D9] text-white shadow-xl transition hover:scale-110"
+            type="button"
+            aria-label="Eelmine pakkumine"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#6D28D9] text-white shadow-xl transition hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#C4B5FD]"
             @click="prevOffer"
           >
-            <ArrowLeft :size="30" />
+            <ArrowLeft :size="30" aria-hidden="true" />
           </button>
 
           <button
-            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#6D28D9] text-white shadow-xl transition hover:scale-110"
-            @click="prevOffer"
+            type="button"
+            aria-label="Järgmine pakkumine"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#6D28D9] text-white shadow-xl transition hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#C4B5FD]"
+            @click="nextOffer"
           >
-            <ArrowRight :size="30" />
+            <ArrowRight :size="30" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -91,27 +83,28 @@ const handleTouchEnd = (event) => {
             <img
               :src="offers[currentOffer]"
               alt="Velo pakkumine"
+              width="1120"
+              height="640"
               class="mx-auto w-full max-w-[1120px] rounded-3xl object-cover shadow-[0_20px_60px_rgba(15,23,42,0.12)]"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </Transition>
       </div>
 
-      <div class="mt-8 flex justify-center gap-4">
+      <div class="mt-8 flex justify-center gap-4" aria-label="Pakkumiste valik">
         <button
           v-for="(_, index) in offers"
           :key="index"
-          class="h-4 w-4 rounded-full transition"
-          :class="
-            index === currentOffer
-              ? 'bg-[#6D28D9]'
-              : 'bg-[#DDD0FF]'
-          "
+          type="button"
+          class="h-4 w-4 rounded-full transition focus:outline-none focus:ring-4 focus:ring-[#C4B5FD]"
+          :class="index === currentOffer ? 'bg-[#6D28D9]' : 'bg-[#DDD0FF]'"
+          :aria-label="`Näita pakkumist ${index + 1}`"
+          :aria-current="index === currentOffer ? 'true' : undefined"
           @click="currentOffer = index"
         />
       </div>
-
-      
     </div>
   </section>
 </template>

@@ -16,43 +16,46 @@ import {
     <div
       class="w-full overflow-hidden rounded-[32px] bg-[#6D28D9] text-white shadow-[0_24px_70px_rgba(109,40,217,0.25)]"
     >
-      <!-- Top -->
-      <div class="grid gap-10 px-7 py-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-12 lg:py-12">
+      <div
+        class="grid gap-10 px-7 py-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-12 lg:py-12"
+      >
         <!-- Brand -->
         <div>
           <img
             src="/images/brand/Velo-logo.svg"
             alt="Velo"
+            width="180"
+            height="56"
             class="h-12 w-auto brightness-0 invert"
           />
 
-          <p class="mt-4 max-w-[260px] text-sm leading-relaxed text-white/80">
+          <p class="mt-4 max-w-[260px] text-sm leading-relaxed text-white/90">
             Nutikas ja keskkonnasõbralik viis linnas liikumiseks. Leia sõiduk,
             broneeri sekunditega ja liigu mugavalt üle Tallinna.
           </p>
 
           <div class="mt-6 flex gap-3">
-            <a href="#" class="social-btn" aria-label="Instagram">
-              <Instagram :size="18" />
+            <a href="#" class="social-btn" aria-label="Ava Velo Instagram">
+              <Instagram :size="18" aria-hidden="true" />
             </a>
 
-            <a href="#" class="social-btn" aria-label="Facebook">
-              <Facebook :size="18" />
+            <a href="#" class="social-btn" aria-label="Ava Velo Facebook">
+              <Facebook :size="18" aria-hidden="true" />
             </a>
 
-            <a href="#" class="social-btn" aria-label="LinkedIn">
-              <Linkedin :size="18" />
+            <a href="#" class="social-btn" aria-label="Ava Velo LinkedIn">
+              <Linkedin :size="18" aria-hidden="true" />
             </a>
           </div>
         </div>
 
         <!-- Navigation -->
         <div>
-          <h3 class="footer-title">
+          <h2 class="footer-title">
             Navigatsioon
-          </h3>
+          </h2>
 
-          <nav class="mt-5 flex flex-col gap-3">
+          <nav class="mt-5 flex flex-col gap-3" aria-label="Jaluse navigatsioon">
             <RouterLink to="/vehicles" class="footer-link">
               Sõidukid
             </RouterLink>
@@ -65,7 +68,7 @@ import {
               Uudised
             </RouterLink>
 
-            <RouterLink to="/offers" class="footer-link">
+            <RouterLink to="/#offers" class="footer-link">
               Kampaaniad
             </RouterLink>
 
@@ -77,13 +80,13 @@ import {
 
         <!-- Contact -->
         <div>
-          <h3 class="footer-title">
+          <h2 class="footer-title">
             Kontakt
-          </h3>
+          </h2>
 
-          <div class="mt-5 space-y-4 text-sm text-white/80">
+          <div class="mt-5 space-y-4 text-sm text-white/90">
             <div class="flex gap-3">
-              <MapPin class="mt-0.5 shrink-0 text-white" :size="18" />
+              <MapPin class="mt-0.5 shrink-0 text-white" :size="18" aria-hidden="true" />
               <div>
                 <p class="font-bold text-white">Narva mnt 5</p>
                 <p>Tallinn, Estonia</p>
@@ -91,7 +94,7 @@ import {
             </div>
 
             <div class="flex gap-3">
-              <Phone class="mt-0.5 shrink-0 text-white" :size="18" />
+              <Phone class="mt-0.5 shrink-0 text-white" :size="18" aria-hidden="true" />
               <div>
                 <p class="font-bold text-white">+372 5432 1234</p>
                 <p>Klienditugi</p>
@@ -99,7 +102,7 @@ import {
             </div>
 
             <div class="flex gap-3">
-              <Mail class="mt-0.5 shrink-0 text-white" :size="18" />
+              <Mail class="mt-0.5 shrink-0 text-white" :size="18" aria-hidden="true" />
               <div>
                 <p class="font-bold text-white">info@velo.ee</p>
                 <p>Vastame 24h jooksul</p>
@@ -110,34 +113,34 @@ import {
 
         <!-- CTA -->
         <div>
-          <h3 class="footer-title">
+          <h2 class="footer-title">
             Rendi Velo juba täna
-          </h3>
+          </h2>
 
-          <p class="mt-5 text-sm leading-relaxed text-white/80">
+          <p class="mt-5 text-sm leading-relaxed text-white/90">
             Vali sobiv elektritõukeratas, elektrijalgratas või elektrimopeed ja
             alusta sõitu kiirelt.
           </p>
 
-          <div class="mt-5 flex items-center gap-3 text-sm text-white/80">
-            <Clock :size="18" class="shrink-0 text-white" />
+          <div class="mt-5 flex items-center gap-3 text-sm text-white/90">
+            <Clock :size="18" class="shrink-0 text-white" aria-hidden="true" />
             <span>E-R 09:00 - 19:00</span>
           </div>
 
           <RouterLink
             to="/vehicles"
-            class="mt-6 inline-flex h-[46px] items-center justify-center gap-3 rounded-xl bg-white px-6 text-sm font-extrabold text-[#6D28D9] shadow-lg transition hover:scale-105"
+            class="mt-6 inline-flex h-[46px] items-center justify-center gap-3 rounded-xl bg-white px-6 text-sm font-extrabold text-[#5B21B6] shadow-lg transition hover:scale-105"
           >
             Vaata sõidukeid
-            <ArrowRight :size="18" />
+            <ArrowRight :size="18" aria-hidden="true" />
           </RouterLink>
         </div>
       </div>
 
       <!-- Bottom -->
-      <div class="border-t border-white/20 px-7 py-6 lg:px-12">
+      <div class="border-t border-white/30 px-7 py-6 lg:px-12">
         <div
-          class="flex flex-col items-center gap-4 text-sm text-white/70 lg:flex-row lg:items-center lg:justify-between"
+          class="flex flex-col items-center gap-4 text-sm text-white/90 lg:flex-row lg:items-center lg:justify-between"
         >
           <span>© 2026 Velo OÜ. Kõik õigused kaitstud.</span>
 
@@ -168,7 +171,7 @@ import {
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.92);
   transition:
     color 0.2s ease,
     transform 0.2s ease,
@@ -187,7 +190,7 @@ import {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.18);
   color: white;
   transition:
     transform 0.2s ease,
@@ -196,6 +199,6 @@ import {
 
 .social-btn:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.28);
 }
 </style>
