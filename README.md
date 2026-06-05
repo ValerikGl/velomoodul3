@@ -85,7 +85,7 @@ https://github.com/ValerikGl/velomoodul3
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/moodul3.git
+git clone https://github.com/ValerikGl/velomoodul3.git
 ```
 
 Install dependencies:
