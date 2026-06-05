@@ -13,7 +13,7 @@ const closeMenu = () => {
   <header class="sticky top-0 z-50 bg-[#F8FAFC]/95 backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
       <RouterLink to="/" class="flex items-center" @click="closeMenu">
-        <img src="/Velo-logo.svg" alt="Velo logo" class="h-8 w-auto" />
+        <img src="/images/brand/Velo-logo.svg" alt="Velo logo" class="h-8 w-auto" />
       </RouterLink>
 
       <!-- DESKTOP NAV -->

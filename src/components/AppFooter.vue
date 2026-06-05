@@ -21,7 +21,7 @@ import {
         <!-- Brand -->
         <div>
           <img
-            src="/Velo-logo.svg"
+            src="/images/brand/Velo-logo.svg"
             alt="Velo"
             class="h-12 w-auto brightness-0 invert"
           />
