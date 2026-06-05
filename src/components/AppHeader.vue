@@ -62,7 +62,7 @@ const closeMenu = () => {
           <RouterLink to="/vehicles" class="mobile-link" @click="closeMenu"
             >Sõidukid</RouterLink
           >
-          <RouterLink to="/mission" class="mobile-link" @click="closeMenu">
+          <RouterLink to="/about" class="mobile-link" @click="closeMenu">
             Meist
           </RouterLink>
           <RouterLink to="/news" class="mobile-link" @click="closeMenu">

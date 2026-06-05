@@ -6,6 +6,7 @@ import VehicleDetailView from "../views/VehicleDetailView.vue";
 import ContactView from "../views/ContactView.vue";
 import BookingView from "../views/BookingView.vue";
 import BlogView from "../views/BlogView.vue";
+import AboutView from "../views/AboutView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -25,6 +26,11 @@ const router = createRouter({
     {
       path: "/news",
       component: BlogView,
+    },
+    {
+      path: "/mission",
+      name: "mission",
+      component: AboutView,
     },
   ],
 });

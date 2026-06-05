@@ -148,7 +148,7 @@ import { Zap, Leaf, Shield, User, Bike } from "lucide-vue-next";
       <!-- RIGHT DESKTOP -->
       <div class="relative hidden h-[520px] lg:block">
         <img
-          src="/hero-scooter.png"
+          src="/images/home/hero-scooter.webp"
           alt="Velo elektritõukeratas linnas"
           class="absolute right-0 top-0 h-[500px] w-[560px] rounded-2xl object-cover object-[85%_center] shadow-xl"
         />

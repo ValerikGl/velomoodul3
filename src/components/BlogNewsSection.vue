@@ -6,25 +6,25 @@ const smallPosts = [
     date: '05.06.2026',
     title: 'Suvekampaania algab varsti',
     desc: 'Juuni lõpus algab meie suur suvekampaania. Rohkem sõite, rohkem vabadust!',
-    img: '/blog-1.png',
+    img: '/images/blog/blog-1.webp',
   },
   {
     date: '28.05.2026',
     title: 'Rakenduse uus versioon',
     desc: 'Uus disain, paremad funktsioonid ja veel mugavam kasutajakogemus.',
-    img: '/blog-2.png',
+    img: '/images/blog/blog-2.webp',
   },
   {
     date: '05.06.2026',
     title: '5 nippi turvaliseks sõiduks',
     desc: 'Väikesed soovitused, mis muudavad sinu sõidud veel turvalisemaks.',
-    img: '/blog-3.png',
+    img: '/images/blog/blog-3.webp',
   },
   {
     date: '05.03.2026',
     title: 'Uued parkimisalad Tallinnas',
     desc: 'Lisanduvad 15 uut parkimisala, et muuta sõitmine veel mugavamaks.',
-    img: '/blog-4.png',
+    img: '/images/blog/blog-4.webp',
   },
 ]
 </script>
@@ -54,7 +54,7 @@ const smallPosts = [
 
       <article class="mt-14 grid overflow-hidden rounded-3xl bg-white shadow-[0_20px_60px_rgba(15,23,42,0.14)] lg:grid-cols-2">
         <img
-          src="/blog-main.png"
+          src="/images/blog/blog-main.webp"
           alt="Velo ride"
           class="h-[280px] w-full object-cover lg:h-[420px]"
         />

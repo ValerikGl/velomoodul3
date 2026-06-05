@@ -67,7 +67,7 @@ onUnmounted(() => {
 
         <div class="relative flex justify-center">
           <img
-            src="/contact-hero.png"
+            src="/images/contact/contact-hero.webp"
             alt="Velo contact"
             class="w-full max-w-[560px] object-contain"
           />

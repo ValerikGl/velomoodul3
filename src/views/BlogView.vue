@@ -6,7 +6,7 @@ const featuredPost = {
   readTime: "4 min",
   title: "Uus Velo ride nüüd saadaval!",
   text: "Tutvustame meie uusimat elektrimopeedi mudelit, mis pakub kuni 80 km sõiduulatust ja täiustatud turvatehnoloogiat.",
-  image: "/blog-1.png",
+  image: "/images/blog/blog-1.webp",
 };
 
 const posts = [
@@ -15,7 +15,7 @@ const posts = [
     readTime: "3 min",
     title: "Suvekampaania algab varsti",
     text: "Juuni lõpus algab meie suur suvekampaania. Rohkem sõite, rohkem vabadust!",
-    image: "/blog-2.png",
+    image: "/images/blog/blog-2.webp",
     tag: "Kampaania",
   },
   {
@@ -23,7 +23,7 @@ const posts = [
     readTime: "5 min",
     title: "Rakenduse uus versioon",
     text: "Uus disain, paremad funktsioonid ja veel mugavam kasutajakogemus.",
-    image: "/blog-3.png",
+    image: "/images/blog/blog-3.webp",
     tag: "Rakendus",
   },
   {
@@ -31,7 +31,7 @@ const posts = [
     readTime: "4 min",
     title: "5 nippi turvaliseks sõiduks",
     text: "Väikesed soovitused, mis muudavad sinu sõidud veel turvalisemaks.",
-    image: "/blog-4.png",
+    image: "/images/blog/blog-4.webp",
     tag: "Ohutus",
   },
   {
@@ -39,7 +39,7 @@ const posts = [
     readTime: "3 min",
     title: "Uued parkimisalad Tallinnas",
     text: "Lisanduvad 15 uut parkimisala, et muuta sõitmine veel mugavamaks.",
-    image: "/blog-5.png",
+    image: "/images/blog/blog-5.webp",
     tag: "Uudised",
   },
   {
@@ -47,7 +47,7 @@ const posts = [
     readTime: "6 min",
     title: "Miks valida elektrisõiduk?",
     text: "Elektriline linnaliiklus on kiire, säästlik ja keskkonnasõbralikum.",
-    image: "/blog-6.png",
+    image: "/images/blog/blog-6.webp",
     tag: "Linnaliiklus",
   },
   {
@@ -55,7 +55,7 @@ const posts = [
     readTime: "4 min",
     title: "Velo laieneb uutesse linnaosadesse",
     text: "Toome Velo sõidukid veel rohkemate kasutajateni üle Tallinna.",
-    image: "/blog-7.png",
+    image: "/images/blog/blog-7.webp",
     tag: "Velo",
   },
 ];

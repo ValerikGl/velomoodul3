@@ -42,7 +42,7 @@ const vehicles = [
     speedValue: 20,
     range: "30 km",
     rangeValue: 30,
-    img: "/vehicle-1.png",
+    img: "/images/vehicles/velo-lite.webp",
   },
   {
     slug: "velo-ride",
@@ -56,7 +56,7 @@ const vehicles = [
     speedValue: 45,
     range: "80 km",
     rangeValue: 80,
-    img: "/vehicle-2.png",
+    img: "/images/vehicles/velo-ride.webp",
   },
   {
     slug: "velo-urban",
@@ -70,7 +70,7 @@ const vehicles = [
     speedValue: 25,
     range: "75 km",
     rangeValue: 75,
-    img: "/vehicle-3.png",
+    img: "/images/vehicles/velo-urban.webp",
   },
   {
     slug: "velo-pro",
@@ -84,7 +84,7 @@ const vehicles = [
     speedValue: 25,
     range: "50 km",
     rangeValue: 50,
-    img: "/vehicle-1.png",
+    img: "/images/vehicles/velo-pro.webp",
   },
   {
     slug: "velo-cruise",
@@ -98,7 +98,7 @@ const vehicles = [
     speedValue: 35,
     range: "70 km",
     rangeValue: 70,
-    img: "/vehicle-2.png",
+    img: "/images/vehicles/velo-cruise.webp",
   },
   {
     slug: "velo-city",
@@ -112,7 +112,7 @@ const vehicles = [
     speedValue: 25,
     range: "60 km",
     rangeValue: 60,
-    img: "/vehicle-3.png",
+    img: "/images/vehicles/velo-city.webp",
   },
 ];
 

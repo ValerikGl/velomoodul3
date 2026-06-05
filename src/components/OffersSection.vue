@@ -5,11 +5,11 @@ import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 const currentOffer = ref(0)
 
 const offers = [
-  '/offer-1.png',
-  '/offer-2.png',
-  '/offer-3.png',
-  '/offer-4.png',
-  '/offer-5.png',
+  '/images/offers/offer-1.webp',
+  '/images/offers/offer-2.webp',
+  '/images/offers/offer-3.webp',
+  '/images/offers/offer-4.webp',
+  '/images/offers/offer-5.webp',
 ]
 
 const nextOffer = () => {
@@ -73,8 +73,8 @@ const handleTouchEnd = (event) => {
           </button>
 
           <button
-            class="flex h-14 w-14 items-center justify-center rounded-full bg-white text-[#6D28D9] shadow-xl transition hover:scale-110"
-            @click="nextOffer"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-[#6D28D9] text-white shadow-xl transition hover:scale-110"
+            @click="prevOffer"
           >
             <ArrowRight :size="30" />
           </button>
