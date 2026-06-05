@@ -26,6 +26,7 @@ const vehicles = [
     speed: '25 km/h',
     range: '50 km',
     img: '/images/vehicles/velo-lite.webp',
+    imageScale: "scale-[1.3]",
   },
   {
     tag: 'UUS',
@@ -34,6 +35,7 @@ const vehicles = [
     speed: '45 km/h',
     range: '80 km',
     img: '/images/vehicles/velo-ride.webp',
+    imageScale: "scale-[1.25]",
   },
   {
     tag: 'PREEMIUM',
@@ -42,6 +44,7 @@ const vehicles = [
     speed: '25 km/h',
     range: '75 km',
     img: '/images/vehicles/velo-urban.webp',
+    imageScale: "scale-[1.35]",
   },
   {
     tag: 'UUS',
@@ -50,6 +53,7 @@ const vehicles = [
     speed: '25 km/h',
     range: '45 km',
     img: '/images/vehicles/velo-pro.webp',
+    imageScale: "scale-[1.15]",
   },
   {
     tag: 'COMFORT',
@@ -58,6 +62,7 @@ const vehicles = [
     speed: '30 km/h',
     range: '60 km',
     img: '/images/vehicles/velo-cruise.webp',
+    imageScale: "scale-[1.25]",
   },
   {
     tag: 'MAX',
@@ -66,6 +71,7 @@ const vehicles = [
     speed: '35 km/h',
     range: '90 km',
     img: '/images/vehicles/velo-city.webp',
+    imageScale: "scale-[1.5]",
   },
 ]
 
@@ -168,6 +174,7 @@ const visibleVehicles = computed(() => {
               <img
                 :src="vehicle.img"
                 :alt="vehicle.name"
+                :class="vehicle.imageScale"
                 class="mx-auto mt-4 h-[150px] w-full object-contain transition-transform duration-300 hover:scale-105 lg:h-[220px]"
               />
 

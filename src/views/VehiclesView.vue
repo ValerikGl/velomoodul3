@@ -43,6 +43,7 @@ const vehicles = [
     range: "30 km",
     rangeValue: 30,
     img: "/images/vehicles/velo-lite.webp",
+    imageScale: "scale-[1.15]",
   },
   {
     slug: "velo-ride",
@@ -57,6 +58,7 @@ const vehicles = [
     range: "80 km",
     rangeValue: 80,
     img: "/images/vehicles/velo-ride.webp",
+    imageScale: "scale-[1.15]",
   },
   {
     slug: "velo-urban",
@@ -71,6 +73,7 @@ const vehicles = [
     range: "75 km",
     rangeValue: 75,
     img: "/images/vehicles/velo-urban.webp",
+    imageScale: "scale-[1.25]",
   },
   {
     slug: "velo-pro",
@@ -85,6 +88,7 @@ const vehicles = [
     range: "50 km",
     rangeValue: 50,
     img: "/images/vehicles/velo-pro.webp",
+    imageScale: "scale-[1.0]",
   },
   {
     slug: "velo-cruise",
@@ -99,6 +103,7 @@ const vehicles = [
     range: "70 km",
     rangeValue: 70,
     img: "/images/vehicles/velo-cruise.webp",
+    imageScale: "scale-[1.25]",
   },
   {
     slug: "velo-city",
@@ -113,6 +118,7 @@ const vehicles = [
     range: "60 km",
     rangeValue: 60,
     img: "/images/vehicles/velo-city.webp",
+    imageScale: "scale-[1.35]",
   },
 ];
 
@@ -399,11 +405,16 @@ const priceCounts = computed(() => {
               {{ vehicle.tag }}
             </span>
 
-            <img
-              :src="vehicle.img"
-              :alt="vehicle.name"
-              class="mx-auto mt-4 h-[190px] w-full object-contain"
-            />
+            <div
+              class="mt-4 flex h-[260px] items-center justify-center overflow-hidden"
+            >
+              <img
+                :src="vehicle.img"
+                :alt="vehicle.name"
+                :class="vehicle.imageScale"
+                class="h-full w-full object-contain transition duration-300"
+              />
+            </div>
 
             <h3 class="mt-4 text-[24px] font-extrabold text-[#0F172A]">
               {{ vehicle.name }}
