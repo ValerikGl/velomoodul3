@@ -71,7 +71,7 @@ const closeMenu = () => {
           <RouterLink to="/offers" class="mobile-link" @click="closeMenu">
             Kampaaniad
           </RouterLink>
-          >
+          
           <RouterLink to="/contact" class="mobile-link" @click="closeMenu"
             >Kontakt</RouterLink
           >
