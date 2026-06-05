@@ -22,9 +22,9 @@ const closeMenu = () => {
       >
         <RouterLink to="/" class="nav-link">Avaleht</RouterLink>
         <RouterLink to="/vehicles" class="nav-link">Sõidukid</RouterLink>
-        <a href="#mission" class="nav-link">Meist</a>
-        <a href="#news" class="nav-link">Uudised</a>
-        <a href="#offers" class="nav-link">Kampaaniad</a>
+        <RouterLink to="/mission" class="nav-link">Meist</RouterLink>
+        <RouterLink to="/news" class="nav-link">Uudised</RouterLink>
+        <RouterLink to="/offers" class="nav-link">Kampaaniad</RouterLink>
         <RouterLink to="/contact" class="nav-link">Kontakt</RouterLink>
       </nav>
 
@@ -62,10 +62,15 @@ const closeMenu = () => {
           <RouterLink to="/vehicles" class="mobile-link" @click="closeMenu"
             >Sõidukid</RouterLink
           >
-          <a href="#mission" class="mobile-link" @click="closeMenu">Meist</a>
-          <a href="#news" class="mobile-link" @click="closeMenu">Uudised</a>
-          <a href="#offers" class="mobile-link" @click="closeMenu"
-            >Kampaaniad</a
+          <RouterLink to="/mission" class="mobile-link" @click="closeMenu">
+            Meist
+          </RouterLink>
+          <RouterLink to="/news" class="mobile-link" @click="closeMenu">
+            Uudised
+          </RouterLink>
+          <RouterLink to="/offers" class="mobile-link" @click="closeMenu">
+            Kampaaniad
+          </RouterLink>
           >
           <RouterLink to="/contact" class="mobile-link" @click="closeMenu"
             >Kontakt</RouterLink
